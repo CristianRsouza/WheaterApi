@@ -6,7 +6,7 @@ import './App.css'
 function App() {
 
   const [weater, setWeater] = useState({})
-  const [city, setCity] = useState("Belo Horizonte")
+  const [city, setCity] = useState("")
 
   const HandleInputChange = (e) => {
     setCity(e.target.value)
