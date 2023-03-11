@@ -14,16 +14,14 @@ function App() {
   }
 
   const handleSearch = () => {
-    fetch(`http://api.weatherapi.com/v1/current.json?key=b0326afa6b084a5499c175447231103&q=${city}&lang=pt`)
+    fetch(`http://api.weatherapi.com/v1/current.json?key=key&q=${city}&lang=pt`)
       .then(response => response.json())
       .then(data => {
         console.log('data => ', data);
         setWeater(data)
-        if (data.current.temp_c > 28) {
-          console.log('temp alta');
+        if (data.current.temp_c > 20) {
           document.body.classList.add('background');
         } else {
-          console.log('temp baixa');
           document.body.classList.remove('background');
         }
       })
