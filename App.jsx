@@ -5,14 +5,17 @@ import './App.css'
 
 function App() {
 
+  
   const [weater, setWeater] = useState({})
   const [city, setCity] = useState("")
 
+  
   const HandleInputChange = (e) => {
     setCity(e.target.value)
     console.log(e.target.value);
   }
 
+  
   const handleSearch = () => {
     fetch(`http://api.weatherapi.com/v1/current.json?key=key&q=${city}&lang=pt`)
       .then(response => response.json())
@@ -26,6 +29,7 @@ function App() {
         }
       })
   }
+  
 
   return (   
    <div className="App">
@@ -36,8 +40,10 @@ function App() {
      </>
      )}
 
+     
      <input type="text" value={city} onChange={HandleInputChange} />
      <button onClick={handleSearch}>Search</button>
+
 
    </div>
   )
